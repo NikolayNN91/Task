@@ -1,13 +1,25 @@
 package com.company;
 
+import com.company.Comparator.ComparatorDown;
+import com.company.Comparator.ComparatorUp;
+
 import java.io.*;
 import java.util.*;
 
 public class FileRW {
 
-    Set<Driver> driversList = new TreeSet<>();
+    ComparatorUp comparatorUp = new ComparatorUp();
+    ComparatorDown comparatorDown = new ComparatorDown();
 
-    public Set<Driver> fileRead(String fileName) {
+    Set<Driver> driversList = null;
+
+    public Set<Driver> fileRead(String fileName, boolean bool) {
+
+        if(bool) {
+            driversList = new TreeSet<>(comparatorDown);
+        } else {
+            driversList = new TreeSet<>(comparatorUp);
+        }
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("resource/" + fileName)))) {
 

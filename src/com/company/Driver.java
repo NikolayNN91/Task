@@ -1,6 +1,6 @@
 package com.company;
 
-public class Driver implements Comparable<Driver>{
+public class Driver {
 
     private String name;
     private double averageSalary;
@@ -36,15 +36,6 @@ public class Driver implements Comparable<Driver>{
         averageSalary = 20.8 * 8 * rate;
     }
 
-    @Override
-    public int compareTo(Driver driver) {
-
-        int i = (int) (this.averageSalary - driver.averageSalary);
-        if(i == 0) {
-            i = this.name.compareTo(driver.name);
-        }
-        return i;
-    }
 
     @Override
     public String toString() {

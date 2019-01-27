@@ -11,9 +11,9 @@ public class DriversService {
 
 
     //загружаем список водителей из файла
-    public Set<Driver> getDriversList(String fileName) {
+    public Set<Driver> getDriversList(String fileName, boolean bool) {
 
-        driversList = fileRW.fileRead(fileName);
+        driversList = fileRW.fileRead(fileName, bool);
         return driversList;
 
     }

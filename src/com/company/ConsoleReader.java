@@ -14,7 +14,17 @@ public class ConsoleReader {
             case "loading":
                 System.out.println("Введите имя файла, с которым вы хотите работать, в формете 'name.txt': ");
                 fileName = scanner.nextLine();
-                driversService.getDriversList(fileName);
+                System.out.println("Сортировать по возрастанию/убыванию заработной платы: U/D ");
+                String sort = scanner.nextLine();
+                boolean bool = false;
+                switch (sort) {
+                    case "U":
+                        break;
+                    case "D":
+                        bool = true;
+                        break;
+                }
+                driversService.getDriversList(fileName, bool);
                 if (driversService.getList() != null) {
                     System.out.println("Загрузка файла выполнена успешно\n");
                 }
