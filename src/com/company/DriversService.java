@@ -33,7 +33,7 @@ public class DriversService {
         Iterator<Driver> iterator = driversList.iterator();
         int count = 0;
         while(iterator.hasNext() && (count < n)) {
-                System.out.println(iterator.next().toString());
+                System.out.println((count+1) + ": " + iterator.next().toString());
                 count++;
 
         }

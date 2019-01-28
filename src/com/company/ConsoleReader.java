@@ -72,6 +72,7 @@ public class ConsoleReader {
             case "remove":
                 System.out.println("Введите номер водителя в списке, которого необходимо удалить:");
                 int number = scanner.nextInt();
+                scanner.nextLine();
                 driversService.removeDriverByNumber(number);
                 break;
 
@@ -79,6 +80,7 @@ public class ConsoleReader {
                 if (driversService.getList() != null) {
                     System.out.println("Введите число водителей:");
                     int n = scanner.nextInt();
+                    scanner.nextLine();
                     driversService.printNDrivers(n);
                 } else {
                     System.out.println("Список пуст, либо не инициализирован");

@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
         ConsoleReader consoleReader = new ConsoleReader();
-        String consoleLine = null;
         boolean exit = false;
+        String consoleLine;
         Scanner scanner = new Scanner(System.in);
 
         while (!exit){
